@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daniela Marin, Chemical Engineer</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+  :root{
+    --ivory:#FBF4EA;
+    --paper:#FFFDF9;
+    --ink:#2A2019;
+    --ink-soft:#5B4C40;
+    --walnut:#3C2A1E;
+    --walnut-deep:#241811;
+    --clay:#F2810B;
+    --clay-deep:#C2650A;
+    --clay-tint:#FCE2C6;
+    --yellow:#F6BB15;
+    --sage:#9C7400;
+    --sage-deep:#7A5A00;
+    --sage-tint:#FDF0C7;
+    --rust:#E35444;
+    --rust-deep:#B53A2D;
+    --rust-tint:#F9DAD4;
+    --green:#508630;
+    --green-deep:#3A6423;
+    --green-tint:#E1EEDA;
+    --gold:#DB9A19;
+    --gold-tint:#F7E4B4;
+    --rattan:#1E1A16;
+    --line:#E6D8C6;
+    --shadow: 0 18px 40px -22px rgba(36,24,17,0.45);
+    --brand-clay:#F2810B;
+    --brand-clay-deep:#C2650A;
+    --brand-walnut:#3C2A1E;
+    --brand-ink:#FBF4EA;
+    --brand-surface:#F2810B;
+    --brand-surface-2:#C2650A;
+    --brand-yellow-surface:#F6BB15;
+    --brand-yellow-surface-2:#DFA400;
+    --brand-yellow-ink:#2E2116;
+    --brand-rust-surface:#E35444;
+    --brand-rust-surface-2:#B53A2D;
+    --radius:10px;
+    color-scheme: light;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ivory:#201C1A; --paper:#2A2523; --ink:#F2ECE4; --ink-soft:#C9C0B6;
+      --walnut:#EDE4D8; --walnut-deep:#FBF6EE;
+      --clay:#FF9F4D; --clay-deep:#FFB878; --clay-tint:#3D2A14;
+      --sage:#FFD84D; --sage-deep:#FFE48A; --sage-tint:#3D3316;
+      --rust:#FF7A68; --rust-deep:#FFA396; --rust-tint:#3D211C;
+      --green:#8FC96A; --green-deep:#ABDB8E; --green-tint:#263019;
+      --gold:#FFCB66; --gold-tint:#3D3016; --line:#3C3733;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ivory:#201C1A; --paper:#2A2523; --ink:#F2ECE4; --ink-soft:#C9C0B6;
+    --walnut:#EDE4D8; --walnut-deep:#FBF6EE;
+    --clay:#FF9F4D; --clay-deep:#FFB878; --clay-tint:#3D2A14;
+    --sage:#FFD84D; --sage-deep:#FFE48A; --sage-tint:#3D3316;
+    --rust:#FF7A68; --rust-deep:#FFA396; --rust-tint:#3D211C;
+    --green:#8FC96A; --green-deep:#ABDB8E; --green-tint:#263019;
+    --gold:#FFCB66; --gold-tint:#3D3016; --line:#3C3733;
+  }
+  html{scroll-behavior:smooth; scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px));}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--ivory);font-family:'Jost',sans-serif;font-weight:300;color:var(--ink);}
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;margin:0;color:var(--walnut-deep);}
+  p{margin:0;line-height:1.65;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:'Jost',sans-serif;cursor:pointer;border:none;background:none;color:inherit;}
+  img{max-width:100%;}
+  ::selection{background:var(--clay-tint);color:var(--walnut-deep);}
+  .container{max-width:1180px;margin:0 auto;padding-inline:56px;}
+  .pill-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:0;font-size:15px;font-weight:600;letter-spacing:0.01em;transition:transform .18s ease, box-shadow .18s ease, background .18s ease;}
+  .pill-btn:hover{transform:translateY(-2px);}
+  .pill-btn-primary{background:var(--brand-clay-deep);color:var(--brand-ink);box-shadow:var(--shadow);}
+  .pill-btn-primary:hover{background:var(--brand-surface-2);}
+  .pill-btn-outline{background:transparent;color:var(--rust-deep);border:1.5px solid var(--rust);}
+  .pill-btn-outline:hover{background:var(--rust);color:var(--brand-ink);}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--sage-deep);}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:0;}
+  .nav-link{position:relative;padding:6px 2px;font-size:15px;font-weight:500;color:var(--brand-yellow-ink);opacity:0.82;transition:opacity .15s ease;}
+  .nav-link:hover{opacity:1;}
+  .nav-link::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1.5px;background:var(--clay);transition:width .2s ease;}
+  .nav-link:hover::after{width:100%;}
+  .tab-btn{padding:14px 20px;border-radius:0;text-align:left;transition:background .18s ease, color .18s ease, border-color .18s ease;border:1px solid transparent;display:flex;align-items:center;gap:14px;width:100%;}
+  .tab-btn.active{background:var(--brand-clay-deep);border-color:var(--brand-clay-deep);}
+  .tab-btn.active > span:last-child{color:var(--brand-ink) !important;}
+  .tab-btn:not(.active):hover{background:var(--clay-tint);}
+  .chip{display:inline-flex;align-items:center;padding:9px 16px;border-radius:0;background:var(--paper);border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--ink-soft);transition:border-color .18s ease, color .18s ease, transform .18s ease;}
+  .chip:hover{border-color:var(--green);color:var(--green-deep);transform:translateY(-1px);}
+  .pub-row{border-bottom:1px solid var(--line);}
+  .pub-row:last-child{border-bottom:none;}
+  .pub-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 4px;text-align:left;}
+  .chev{transition:transform .25s ease;flex-shrink:0;}
+  .chev.open{transform:rotate(180deg);}
+  .pub-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .pub-body.open{max-height:220px;}
+  .timeline-dot{width:12px;height:12px;border-radius:50%;background:var(--clay);border:3px solid var(--ivory);box-shadow:0 0 0 1.5px var(--clay);flex-shrink:0;}
+  .float-slow{animation:floaty 6s ease-in-out infinite;}
+  .float-slower{animation:floaty 7.5s ease-in-out infinite;animation-delay:.6s;}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+  .pulse-dot{animation:pulseDot 2.4s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{opacity:0.35;}50%{opacity:1;}}
+  .fade-key{transition:opacity .22s ease;}
+  .fade-out{opacity:0;}
+  #word{font-weight:600;color:var(--clay-deep);display:inline-block;}
+  .copy-toast{position:absolute;top:-38px;left:50%;transform:translateX(-50%);background:var(--brand-walnut);color:var(--brand-ink);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:0;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease, transform .18s ease;}
+  .copy-toast.show{opacity:1;transform:translateX(-50%) translateY(-4px);}
+  .theme-toggle{position:fixed;bottom:24px;right:24px;z-index:50;width:46px;height:46px;border-radius:0;background:var(--green);color:var(--brand-ink);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);}
+  .theme-toggle:hover{transform:translateY(-2px);}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease, transform .55s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  #scrollspy{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:45;display:flex;flex-direction:column;gap:14px;}
+  .scrollspy-dot{width:9px;height:9px;background:var(--line);cursor:pointer;transition:background-color .3s ease, transform .2s ease;border:none;padding:0;}
+  .scrollspy-dot.active{transform:scale(1.4);}
+  #back-to-top{position:fixed;bottom:24px;left:24px;z-index:50;width:46px;height:46px;background:var(--rust);color:var(--brand-ink);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s ease, transform .25s ease;}
+  #back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+  @media (max-width: 860px){
+    #scrollspy{display:none;}
+  }
+  @media (max-width: 420px){
+    #nav-logo{font-size:19px !important;}
+  }
+  .hamburger-btn{display:none;background:none;border:none;padding:8px;margin:-8px;cursor:pointer;color:var(--brand-yellow-ink);}
+  #mobile-menu{position:fixed;top:0;right:0;bottom:0;width:82vw;max-width:340px;background:var(--ivory);z-index:70;transform:translateX(100%);transition:transform .3s ease;box-shadow:-8px 0 30px rgba(0,0,0,0.15);padding-top:calc(env(safe-area-inset-top,0px) + 20px);overflow-y:auto;}
+  #mobile-menu.open{transform:translateX(0);}
+  #mobile-menu-backdrop{position:fixed;inset:0;background:rgba(20,15,10,0.4);z-index:65;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  #mobile-menu-backdrop.open{opacity:1;pointer-events:auto;}
+  .mobile-nav-link{display:block;padding:16px 28px;font-size:19px;font-weight:600;color:var(--walnut-deep);border-bottom:1px solid var(--line);text-decoration:none;}
+  @media (max-width: 860px){
+    .hamburger-btn{display:flex;align-items:center;}
+  }
+  .confetti-piece{position:fixed;width:8px;height:8px;pointer-events:none;z-index:999;border-radius:0;}
+  @keyframes confettiFall{0%{transform:translate(0,0) rotate(0deg);opacity:1;}100%{transform:translate(var(--dx),var(--dy)) rotate(var(--rot));opacity:0;}}
+  .weave-divider{
+    height:16px;
+    background-color:var(--clay-tint);
+    background-image:
+      repeating-linear-gradient(45deg, var(--rattan) 0px, var(--rattan) 2.5px, transparent 2.5px, transparent 9px),
+      repeating-linear-gradient(-45deg, var(--walnut) 0px, var(--walnut) 2.5px, transparent 2.5px, transparent 9px);
+    opacity:0.85;
+  }
+  .hide-scrollbar-x{overflow-x:auto;}
+  @media (max-width: 860px){
+    .container{padding-inline:24px;}
+    .hero-grid{grid-template-columns:1fr !important;}
+    .two-col{grid-template-columns:1fr !important;}
+    .nav-links{display:none !important;}
+    .research-grid{grid-template-columns:1fr !important;}
+    .skills-grid{grid-template-columns:1fr !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div id="site-nav" style="position:sticky;top:0;z-index:40;background:linear-gradient(90deg, var(--brand-yellow-surface), var(--brand-yellow-surface-2));border-bottom:1px solid rgba(46,33,22,0.15); padding-top: env(safe-area-inset-top, 0px);">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:76px;">
+    <a href="#top" id="nav-logo" style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--brand-yellow-ink);letter-spacing:0.01em;cursor:pointer;white-space:nowrap;">Daniela Marin</a>
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" style="display:flex;align-items:center;gap:22px;">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#publications" class="nav-link">Publications</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#media" class="nav-link">Media</a>
+      <a href="#consulting" class="nav-link">Consulting</a>
+      <a href="#contact" class="pill-btn" style="background:var(--clay);color:var(--brand-ink);padding:11px 22px;font-size:14px;border-radius:0;white-space:nowrap;flex-shrink:0;">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px rgba(80,134,48,0.25);"></span>
+        Get in touch
+      </a>
+    </div>
+  </div>
+  <div id="section-accent" style="height:3px;width:100%;background:var(--clay);transition:background-color .35s ease;"></div>
+</div>
+
+<div id="mobile-menu-backdrop"></div>
+<div id="mobile-menu">
+  <div style="display:flex;justify-content:flex-end;padding:0 20px 12px;">
+    <button id="mobile-menu-close" aria-label="Close menu" style="background:none;border:none;padding:8px;cursor:pointer;color:var(--walnut-deep);">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <a href="#about" class="mobile-nav-link">About</a>
+  <a href="#research" class="mobile-nav-link">Research</a>
+  <a href="#publications" class="mobile-nav-link">Publications</a>
+  <a href="#experience" class="mobile-nav-link">Experience</a>
+  <a href="#skills" class="mobile-nav-link">Skills</a>
+  <a href="#media" class="mobile-nav-link">Media</a>
+  <a href="#consulting" class="mobile-nav-link">Consulting</a>
+  <a href="#contact" class="mobile-nav-link" style="border-bottom:none;">Contact</a>
+  <div style="padding:24px 28px;">
+    <a href="#contact" class="pill-btn pill-btn-primary" style="display:block;text-align:center;">Get in touch</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div id="top" style="position:relative;overflow:hidden;padding-top:96px;padding-bottom:88px;background:linear-gradient(180deg,var(--ivory) 0%, var(--ivory) 70%, var(--clay-tint) 200%);">
+  <div aria-hidden="true" style="position:absolute;top:-120px;right:-90px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 35% 35%, var(--clay-tint), transparent 70%);filter:blur(6px);opacity:.9;"></div>
+  <div aria-hidden="true" style="position:absolute;bottom:-140px;left:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle at 60% 40%, var(--sage-tint), transparent 70%);filter:blur(6px);opacity:.85;"></div>
+  <div class="container hero-grid" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;position:relative;z-index:1;">
+    <div>
+      <div class="eyebrow" style="margin-bottom:18px;color:var(--green-deep);">Electrochemist &amp; Materials Scientist</div>
+      <h1 style="font-size:clamp(38px,5vw,60px);font-weight:600;line-height:1.06;letter-spacing:-0.01em;">
+        Hi, I&rsquo;m Daniela Marin,<br>an electrochemist by training,<br>working at the intersection of <span style="color:var(--green);">materials, energy, and innovation</span>.
+      </h1>
+      <div style="margin-top:26px;display:flex;align-items:baseline;gap:10px;font-size:19px;color:var(--ink-soft);flex-wrap:wrap;">
+        <span>Ph.D., Chemical Engineering, Stanford University, 10+ years in research spanning</span>
+        <span id="word" class="fade-key" style="background:var(--yellow);color:var(--brand-yellow-ink);padding:5px 14px 6px;border-radius:0;font-size:16px;font-weight:700;">battery materials</span>
+      </div>
+      <p style="margin-top:24px;max-width:520px;color:var(--ink-soft);font-size:16.5px;">
+        Ph.D. chemical engineer with over a decade of research experience across materials science and energy efficiency, including semiconductor lithography materials, electrochemical energy conversion, biomass-derived materials, atmospheric research, and clean-tech market strategy. Drawn to problems where better materials mean better performance, wherever that shows up.
+      </p>
+      <div style="margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#research" class="pill-btn pill-btn-primary">View my research</a>
+        <a href="#contact" class="pill-btn pill-btn-outline">Say hello</a>
+      </div>
+    </div>
+
+    <div style="position:relative;aspect-ratio:420/380;max-height:380px;">
+      <svg viewBox="0 0 420 380" style="width:100%;height:100%;display:block;" aria-hidden="true">
+        <defs>
+          <linearGradient id="cellGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#F1DECB"/>
+            <stop offset="100%" stop-color="#E4E8D6"/>
+          </linearGradient>
+        </defs>
+        <rect x="40" y="60" width="340" height="260" rx="0" fill="url(#cellGrad)" opacity="0.55"/>
+        <rect x="120" y="90" width="26" height="200" rx="0" fill="var(--clay-deep)"/>
+        <rect x="270" y="90" width="26" height="200" rx="0" fill="var(--rust)"/>
+        <line x1="133" y1="90" x2="133" y2="40" stroke="var(--ink)" stroke-width="3"/>
+        <line x1="283" y1="90" x2="283" y2="40" stroke="var(--ink)" stroke-width="3"/>
+        <line x1="133" y1="40" x2="283" y2="40" stroke="var(--ink)" stroke-width="3"/>
+        <circle cx="208" cy="40" r="16" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+        <text x="208" y="45" text-anchor="middle" font-family="Jost" font-size="14" font-weight="600" fill="var(--ink)">e&minus;</text>
+        <circle class="pulse-dot" cx="160" cy="40" r="4.5" fill="var(--yellow)" stroke="var(--brand-yellow-ink)" stroke-width="0.5"/>
+        <circle class="pulse-dot" cx="256" cy="40" r="4.5" fill="var(--yellow)" stroke="var(--brand-yellow-ink)" stroke-width="0.5" style="animation-delay:1.2s;"/>
+        <circle class="float-slow" cx="150" cy="160" r="6" fill="var(--clay)" opacity="0.85"/>
+        <circle class="float-slower" cx="168" cy="220" r="5" fill="var(--clay)" opacity="0.7"/>
+        <circle class="float-slow" cx="140" cy="260" r="4.5" fill="var(--green)" opacity="0.7"/>
+        <circle class="float-slower" cx="260" cy="180" r="5" fill="var(--rust)" opacity="0.8"/>
+        <circle class="float-slow" cx="245" cy="240" r="4" fill="var(--rust)" opacity="0.65"/>
+        <text x="133" y="315" text-anchor="middle" font-family="Jost" font-size="13" font-weight="500" fill="var(--ink-soft)">anode</text>
+        <text x="283" y="315" text-anchor="middle" font-family="Jost" font-size="13" font-weight="500" fill="var(--ink-soft)">cathode</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" style="padding:96px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container two-col" style="display:grid;grid-template-columns:0.7fr 1.3fr;gap:64px;">
+    <div class="reveal">
+      <div class="eyebrow" style="margin-bottom:14px;">About</div>
+      <h2 style="font-size:34px;font-weight:600;color:var(--green);margin-bottom:28px;">Grounded in chemistry, aimed at the energy transition.</h2>
+      <div style="aspect-ratio:4/5;max-width:260px;border:1.5px dashed var(--line);background:var(--ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--ink-soft);">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v1"/></svg>
+        <span style="font-size:12.5px;text-align:center;padding:0 16px;opacity:0.75;">Add your photo here</span>
+      </div>
+    </div>
+    <div class="reveal" style="display:flex;flex-direction:column;gap:20px;font-size:16.5px;color:var(--ink-soft);transition-delay:0.1s;">
+      <p>Daniela is an electrochemist and materials scientist by training, with a Ph.D. in Chemical Engineering from Stanford University and over a decade of research experience across energy systems, advanced materials, and semiconductor technology. At Stanford, she designed and operated bipolar-membrane water electrolyzers for hydrogen production from impure feedstocks, achieving an 8x reduction in chlorine oxidation and a 140x improvement in device lifetime versus a PEM baseline, and is first author on a paper in <em>Joule</em>. Earlier, at NREL, she synthesized biomass-derived composite materials; as an undergraduate, she did research on atmospheric aerosols and viscous fingering stabilization; and she has evaluated the technical and commercial feasibility of market entry for a hydrogen company in Scotland.</p>
+      <p>She has contributed to grant proposals supporting $600K+ in competitively awarded research funding, mentored and trained 100+ researchers on shared instrumentation, and now works as a Research Scientist and Consultant in materials science, developing analytical protocols for next-generation semiconductor lithography materials.</p>
+      <div style="display:flex;gap:36px;margin-top:12px;flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--clay-deep);">12+</div>
+          <div style="font-size:13.5px;color:var(--ink-soft);">Publications</div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--sage-deep);">10+</div>
+          <div style="font-size:13.5px;color:var(--ink-soft);">Years in research</div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--rust);">$800K+</div>
+          <div style="font-size:13.5px;color:var(--ink-soft);">Research grants / fellowships</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<div id="research" style="padding:96px 0;">
+  <div class="container">
+    <div class="eyebrow" style="margin-bottom:14px;">Research</div>
+    <h2 style="font-size:34px;font-weight:600;margin-bottom:44px;max-width:640px;color:var(--green);">A range of problems, one habit of mind.</h2>
+
+    <div class="research-grid reveal" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:36px;align-items:start;">
+      <div id="tab-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+      <div id="research-panel" style="padding:40px;min-height:290px;border-radius:0;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div id="publications" style="padding:96px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container" style="max-width:880px;">
+    <div class="eyebrow" style="margin-bottom:14px;">Selected Publications</div>
+    <h2 style="font-size:34px;font-weight:600;margin-bottom:16px;color:var(--green);">A selection, spanning a few different fields.</h2>
+    <p style="color:var(--ink-soft);font-size:15.5px;margin-bottom:36px;">Click a title to expand the abstract. For the complete list of 12+ publications, visit my <a href="https://scholar.google.com/citations?user=th4zgJcAAAAJ&amp;hl=en" target="_blank" rel="noopener" style="color:var(--green-deep);font-weight:600;text-decoration:underline;">Google Scholar profile</a>.</p>
+    <div id="pub-list"></div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div id="experience" style="padding:96px 0;">
+  <div class="container" style="max-width:760px;">
+    <div class="eyebrow" style="margin-bottom:14px;">Education &amp; Experience</div>
+    <h2 style="font-size:34px;font-weight:600;margin-bottom:48px;color:var(--green);">The path so far.</h2>
+    <div id="timeline-list" style="display:flex;flex-direction:column;"></div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" style="padding:96px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="eyebrow" style="margin-bottom:14px;color:var(--green-deep);">Skills &amp; Techniques</div>
+    <h2 style="font-size:34px;font-weight:600;margin-bottom:44px;color:var(--green);">The toolkit.</h2>
+    <div class="skills-grid" id="skills-list" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;"></div>
+  </div>
+</div>
+
+<!-- MEDIA & PRESS -->
+<div id="media" style="padding:96px 0;">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:44px;">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">In the News</div>
+        <h2 style="font-size:34px;font-weight:600;color:var(--clay-deep);margin:0;">Media &amp; Press</h2>
+      </div>
+      <a href="#contact" style="font-size:14px;font-weight:600;color:var(--rust-deep);text-decoration:none;border-bottom:1.5px solid var(--rust-deep);padding-bottom:2px;">Contact for media &rarr;</a>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:24px;">
+
+      <!-- Univision (Video, ES) -->
+      <div class="reveal card" style="flex:1 1 320px;overflow:hidden;">
+        <div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--clay-tint);">
+          <img src="https://justciencia.wordpress.com/wp-content/uploads/2025/10/inflectionaward.jpg" alt="Univision feature: Hija de trabajadores agr&iacute;colas y estudiante de Stanford gana premio internacional" style="position:absolute;width:100%;height:100%;object-fit:cover;display:block;">
+          <a href="https://www.univision.com/local/san-francisco-kdtv/hija-de-trabajadores-agricolas-y-estudiante-de-stanford-gana-premio-internacional-video" target="_blank" rel="noopener" style="position:absolute;inset:0;display:block;" aria-label="Watch Univision feature"></a>
+          <span style="position:absolute;top:12px;left:12px;background:var(--clay-deep);color:var(--brand-ink);font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:4px 10px;pointer-events:none;">Video &middot; ES</span>
+        </div>
+        <div style="padding:22px;">
+          <h4 style="margin:0 0 8px;font-size:19px;font-weight:600;line-height:1.3;">&ldquo;Hija de trabajadores agr&iacute;colas y estudiante de Stanford gana premio internacional&rdquo;</h4>
+          <div style="color:var(--ink-soft);font-size:13px;margin-bottom:10px;">Univision &Aacute;rea de la Bah&iacute;a &middot; Mar 28, 2025</div>
+          <div style="color:var(--ink-soft);font-size:15px;">
+            Interview on her path as a first-gen scientist and recent recognition.
+            <a href="https://www.univision.com/local/san-francisco-kdtv/hija-de-trabajadores-agricolas-y-estudiante-de-stanford-gana-premio-internacional-video" target="_blank" rel="noopener" style="color:var(--clay-deep);font-weight:600;text-decoration:underline;">Watch</a>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Gates Notes -->
+      <div class="reveal card" style="flex:1 1 320px;overflow:hidden;transition-delay:0.1s;">
+        <div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--sage-tint);">
+          <img src="https://justciencia.wordpress.com/wp-content/uploads/2025/10/gatesnotes.jpg" alt="Gates Notes feature: From power to pee" style="position:absolute;width:100%;height:100%;object-fit:cover;display:block;">
+          <a href="https://www.gatesnotes.com/visiting-the-stanford-doerr-school-of-sustainability" target="_blank" rel="noopener" style="position:absolute;inset:0;display:block;" aria-label="Read Gates Notes feature"></a>
+          <span style="position:absolute;top:12px;left:12px;background:var(--sage-deep);color:var(--brand-ink);font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:4px 10px;pointer-events:none;">Feature</span>
+        </div>
+        <div style="padding:22px;">
+          <h4 style="margin:0 0 8px;font-size:19px;font-weight:600;line-height:1.3;">&ldquo;From power to pee, this new school is innovating a more sustainable future&rdquo;</h4>
+          <div style="color:var(--ink-soft);font-size:13px;margin-bottom:10px;">Gates Notes &middot; Oct 4, 2022</div>
+          <div style="color:var(--ink-soft);font-size:15px;">
+            Coverage of her lab&rsquo;s sustainability research during Bill Gates&rsquo;s visit to Stanford, where she demonstrated her experiment, featured on the Gates Notes cover photo.
+            <a href="https://www.gatesnotes.com/visiting-the-stanford-doerr-school-of-sustainability" target="_blank" rel="noopener" style="color:var(--sage-deep);font-weight:600;text-decoration:underline;">Read</a>.
+          </div>
+        </div>
+      </div>
+
+      <!-- SLAC Press -->
+      <div class="reveal card" style="flex:1 1 320px;overflow:hidden;transition-delay:0.2s;">
+        <div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--rust-tint);">
+          <img src="https://justciencia.wordpress.com/wp-content/uploads/2025/10/slacnews.jpg" alt="SLAC press release: Seawater to hydrogen fuel" style="position:absolute;width:100%;height:100%;object-fit:cover;display:block;">
+          <a href="https://www6.slac.stanford.edu/news/2023-04-11-researchers-devise-new-system-turning-seawater-hydrogen-fuel" target="_blank" rel="noopener" style="position:absolute;inset:0;display:block;" aria-label="Read SLAC press release"></a>
+          <span style="position:absolute;top:12px;left:12px;background:var(--rust-deep);color:var(--brand-ink);font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:4px 10px;pointer-events:none;">Press</span>
+        </div>
+        <div style="padding:22px;">
+          <h4 style="margin:0 0 8px;font-size:19px;font-weight:600;line-height:1.3;">&ldquo;Researchers devise new system for turning seawater into hydrogen fuel&rdquo;</h4>
+          <div style="color:var(--ink-soft);font-size:13px;margin-bottom:10px;">SLAC National Accelerator &middot; Apr 11, 2023</div>
+          <div style="color:var(--ink-soft);font-size:15px;">
+            Press release covering the seawater-resilient electrolyzer advances she contributed to.
+            <a href="https://www6.slac.stanford.edu/news/2023-04-11-researchers-devise-new-system-turning-seawater-hydrogen-fuel" target="_blank" rel="noopener" style="color:var(--rust-deep);font-weight:600;text-decoration:underline;">Read</a>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CONSULTING -->
+<div id="consulting" style="padding:96px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container two-col" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:64px;align-items:center;">
+    <div class="reveal">
+      <div class="eyebrow" style="margin-bottom:14px;">Consulting</div>
+      <h2 style="font-size:34px;font-weight:600;color:var(--rust);margin-bottom:20px;">Also open to consulting projects.</h2>
+      <p style="color:var(--ink-soft);font-size:16.5px;max-width:520px;">Daniela takes on select consulting projects in electrochemistry, materials characterization, and clean-tech R&amp;D. If your team could use an extra set of hands or an outside perspective on a technical problem, get in touch.</p>
+      <div style="margin-top:32px;">
+        <a href="#contact" class="pill-btn pill-btn-primary">Discuss a project</a>
+      </div>
+    </div>
+    <div class="reveal card" style="padding:32px;text-align:center;transition-delay:0.1s;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--rust-deep);line-height:1;">Starting at $150/hr</div>
+      <div style="font-size:13px;color:var(--ink-soft);margin-top:8px;">Depends on project scope</div>
+    </div>
+  </div>
+</div>
+
+<div class="weave-divider" aria-hidden="true"></div>
+
+<!-- CONTACT -->
+<div id="contact" style="padding:110px 0 100px;background:linear-gradient(135deg, var(--brand-rust-surface) 0%, var(--brand-rust-surface-2) 100%);position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;top:-160px;right:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%);"></div>
+  <div aria-hidden="true" style="position:absolute;bottom:-180px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle, rgba(0,0,0,0.14), transparent 70%);"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div style="max-width:600px;">
+      <div class="eyebrow" style="color:var(--yellow);margin-bottom:14px;">Get in touch</div>
+      <h2 style="font-size:36px;font-weight:600;color:var(--brand-ink);margin-bottom:18px;">Let&rsquo;s talk electrolyzers, energy, or opportunities.</h2>
+      <p style="color:#FBE2D8;font-size:16px;margin-bottom:40px;">Based in San Jose, CA. Open to collaborations, research roles, or just talking shop about materials science, semiconductors, energy systems, or clean tech.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+      <a href="https://www.linkedin.com/in/danielaahmarin/" target="_blank" rel="noopener" class="pill-btn" style="background:var(--yellow);color:var(--brand-yellow-ink);border-radius:0;font-weight:700;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://scholar.google.com/citations?user=th4zgJcAAAAJ&hl=en" target="_blank" rel="noopener" class="pill-btn" style="background:rgba(255,255,255,0.14);color:var(--brand-ink);border:1px solid rgba(255,255,255,0.38);border-radius:0;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Google Scholar
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="padding:26px 0;background:var(--brand-rust-surface-2);border-top:1px solid rgba(255,255,255,0.1); padding-bottom: calc(26px + env(safe-area-inset-bottom, 0px));">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+    <div style="font-size:13px;color:rgba(251,244,234,0.78);">&copy; 2026 Daniela Marin. Built with electrons and stubbornness.</div>
+    <div style="font-size:13px;color:rgba(251,244,234,0.78);">Materials, energy, and everything in between.</div>
+  </div>
+</div>
+
+
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+</button>
+
+<button id="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<div id="scrollspy" aria-hidden="true"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- Mobile menu ----
+  var hamburgerBtn = document.getElementById('hamburger-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+  var mobileMenuClose = document.getElementById('mobile-menu-close');
+  function openMobileMenu(){
+    mobileMenu.classList.add('open');
+    mobileMenuBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu(){
+    mobileMenu.classList.remove('open');
+    mobileMenuBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (hamburgerBtn) { hamburgerBtn.addEventListener('click', openMobileMenu); }
+  if (mobileMenuClose) { mobileMenuClose.addEventListener('click', closeMobileMenu); }
+  if (mobileMenuBackdrop) { mobileMenuBackdrop.addEventListener('click', closeMobileMenu); }
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
+
+  // ---- Reveal-on-scroll (shared observer) ----
+  var revealObserver = ('IntersectionObserver' in window)
+    ? new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' })
+    : { observe: function(el){ el.classList.add('visible'); } };
+  document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
+
+  // ---- Scroll progress bar + battery indicator ----
+  var batteryFill = document.getElementById('battery-fill-rect');
+  var batteryPct = document.getElementById('battery-pct');
+  function updateProgress(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (batteryFill) {
+      batteryFill.setAttribute('width', (pct / 100 * 21).toFixed(1));
+      var fillColor = pct < 20 ? 'var(--rust)' : (pct < 90 ? 'var(--yellow)' : 'var(--green)');
+      batteryFill.style.fill = fillColor;
+    }
+    if (batteryPct) { batteryPct.textContent = Math.round(pct) + '%'; }
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  // ---- Section color accent strip + scrollspy dots ----
+  var sectionAccent = document.getElementById('section-accent');
+  var scrollspyEl = document.getElementById('scrollspy');
+  var sectionColors = {
+    about: 'var(--clay)', research: 'var(--yellow)', publications: 'var(--rust)',
+    experience: 'var(--green)', skills: 'var(--green)', media: 'var(--clay)', consulting: 'var(--rust)', contact: 'var(--rust)'
+  };
+  var scrollspyDots = {};
+  if (scrollspyEl) {
+    Object.keys(sectionColors).forEach(function(id){
+      var dot = document.createElement('button');
+      dot.className = 'scrollspy-dot';
+      dot.setAttribute('aria-label', 'Jump to ' + id);
+      dot.addEventListener('click', function(){
+        var target = document.getElementById(id);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+      scrollspyEl.appendChild(dot);
+      scrollspyDots[id] = dot;
+    });
+  }
+  if (sectionAccent && 'IntersectionObserver' in window) {
+    var sectionObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          var color = sectionColors[id];
+          if (color) sectionAccent.style.background = color;
+          Object.keys(scrollspyDots).forEach(function(key){
+            scrollspyDots[key].classList.toggle('active', key === id);
+            scrollspyDots[key].style.background = key === id ? (sectionColors[key]) : '';
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    Object.keys(sectionColors).forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    });
+  }
+
+  // ---- Back to top ----
+  var backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', function(){
+      backToTop.classList.toggle('show', window.scrollY > 700);
+    }, { passive: true });
+    backToTop.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ---- Confetti easter egg (click the logo 5 times) ----
+  var logo = document.getElementById('nav-logo');
+  var confettiColors = ['#F2810B', '#F6BB15', '#E35444', '#508630'];
+  var clickCount = 0;
+  var clickTimer = null;
+  if (logo) {
+    logo.addEventListener('click', function(e){
+      e.preventDefault();
+      clickCount++;
+      clearTimeout(clickTimer);
+      clickTimer = setTimeout(function(){ clickCount = 0; }, 1800);
+      if (clickCount >= 2) {
+        clickCount = 0;
+        var rect = logo.getBoundingClientRect();
+        var originX = rect.left + rect.width / 2;
+        var originY = rect.bottom;
+        for (var i = 0; i < 28; i++) {
+          var piece = document.createElement('div');
+          piece.className = 'confetti-piece';
+          piece.style.left = originX + 'px';
+          piece.style.top = originY + 'px';
+          piece.style.background = confettiColors[i % confettiColors.length];
+          var angle = Math.random() * Math.PI * 2;
+          var dist = 80 + Math.random() * 140;
+          piece.style.setProperty('--dx', (Math.cos(angle) * dist) + 'px');
+          piece.style.setProperty('--dy', (Math.sin(angle) * dist + 60) + 'px');
+          piece.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
+          piece.style.animation = 'confettiFall ' + (0.9 + Math.random() * 0.6) + 's ease-out forwards';
+          document.body.appendChild(piece);
+          (function(p){ setTimeout(function(){ p.remove(); }, 1600); })(piece);
+        }
+      }
+    });
+  }
+
+  // ---- Rotating hero word ----
+  var words = ['electrochemical energy', 'biomass-derived materials', 'atmospheric research', 'clean-tech strategy', 'semiconductor materials'];
+  var wordEl = document.getElementById('word');
+  var wi = 0;
+  setInterval(function(){
+    wordEl.classList.add('fade-out');
+    setTimeout(function(){
+      wi = (wi + 1) % words.length;
+      wordEl.textContent = words[wi];
+      wordEl.classList.remove('fade-out');
+    }, 220);
+  }, 2400);
+
+  // ---- Research tabs ----
+  var research = [
+    { id: 'materials', label: 'Materials Characterization', tag: 'Semiconductors &amp; Failure Analysis', color: 'var(--rust-deep)', tint: 'var(--rust-tint)',
+      title: 'Semiconductor lithography materials & device failure analysis',
+      description: 'Currently develops analytical protocols (NMR, UV-Vis, FTIR) to characterize next-generation semiconductor lithography materials, ensuring controlled monomer-to-polymer transitions and reproducible material performance. Previously correlated surface morphology and composition (SEM, EDS, XPS) with device failure modes, and trained 100+ researchers on shared instrumentation.',
+      tools: ['NMR', 'UV-Vis / FTIR', 'SEM / EDS / XPS'],
+      iconPath: 'M6 6h12v12H6z M9 3v3 M15 3v3 M9 18v3 M15 18v3 M3 9h3 M3 15h3 M18 9h3 M18 15h3' },
+    { id: 'electrochemistry', label: 'Electrochemical Energy Conversion', tag: 'Hydrogen &amp; Electrolysis', color: 'var(--clay-deep)', tint: 'var(--clay-tint)',
+      title: 'Impure-water electrolysis for hydrogen production',
+      description: 'Designed, assembled, and operated membrane-based water electrolyzers (bipolar, anion-exchange, cation-exchange) for hydrogen production from impure feedstocks including seawater and tap water, achieving an 8x reduction in chlorine oxidation and a 140x improvement in device lifetime versus a PEM baseline. Co-authored related work on bipolar membrane physics and chloride crossover control.',
+      tools: ['Electrolyzer assembly', 'Electrochemical cell design', 'Performance diagnostics'],
+      iconPath: 'M12 2c3 4 6 7.5 6 11.5A6 6 0 0 1 6 13.5C6 9.5 9 6 12 2z' },
+    { id: 'biomass', label: 'Biomass-Derived Materials', tag: 'Sustainable Materials', color: 'var(--green-deep)', tint: 'var(--green-tint)',
+      title: 'Composite thermosets from biomass waste',
+      description: 'At NREL&rsquo;s National Bioenergy Center, synthesized and characterized composite thermosets from biomass waste and developed non-toxic inorganic plasticizers to support commercialization, an early exposure to turning sustainable feedstocks into viable materials.',
+      tools: ['Materials synthesis', 'TGA / DSC', 'Plasticizer development'],
+      iconPath: 'M4 8l8-5 8 5v8l-8 5-8-5z' },
+    { id: 'atmospheric', label: 'Atmospheric &amp; Environmental Research', tag: 'Environmental Science', color: 'var(--clay-deep)', tint: 'var(--clay-tint)',
+      title: 'Undergraduate research on atmospheric aerosols',
+      description: 'Conducted undergraduate research on atmospheric aerosols, an early foothold in environmental science that still shapes how she thinks about the systems-level impact of the materials and energy technologies she works on today.',
+      tools: ['Atmospheric measurement', 'Environmental analysis'],
+      iconPath: 'M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z' },
+    { id: 'strategy', label: 'Market & Techno-Economic Strategy', tag: 'Techno-Economic Analysis', color: 'var(--rust-deep)', tint: 'var(--rust-tint)',
+      title: 'Market entry & feasibility analysis',
+      description: 'Evaluated the technical and commercial feasibility of a hydrogen company&rsquo;s U.S. market entry strategy in Aberdeen, Scotland, presenting economic forecasts and risk assessments to senior leadership, and separately assessed decarbonization pathways across coal plant assets for a utilities company.',
+      tools: ['Techno-economic analysis', 'Market feasibility', 'Executive presentations'],
+      iconPath: 'M3 3v18h18 M7 14l4-4 4 4 5-6' }
+  ];
+  var activeResearch = 'materials';
+  var tabList = document.getElementById('tab-list');
+  var panel = document.getElementById('research-panel');
+
+  function renderTabs(){
+    tabList.innerHTML = '';
+    research.forEach(function(item){
+      var isActive = item.id === activeResearch;
+      var btn = document.createElement('button');
+      btn.className = 'tab-btn' + (isActive ? ' active' : '');
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      if (isActive) { btn.style.background = item.color; btn.style.borderColor = item.color; }
+      btn.innerHTML =
+        '<span style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:0;background:' + (isActive ? 'rgba(255,255,255,0.22)' : item.tint) + ';flex-shrink:0;">' +
+        '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="' + (isActive ? 'var(--brand-ink)' : item.color) + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="' + item.iconPath + '"/></svg></span>' +
+        '<span style="font-size:16px;font-weight:600;">' + item.label + '</span>';
+      btn.addEventListener('click', function(){
+        activeResearch = item.id;
+        renderTabs();
+        renderPanel();
+      });
+      tabList.appendChild(btn);
+    });
+  }
+
+  function renderPanel(){
+    var item = research.find(function(r){ return r.id === activeResearch; });
+    panel.style.background = 'linear-gradient(160deg, var(--brand-yellow-surface) 0%, var(--brand-yellow-surface-2) 100%)';
+    panel.style.borderTop = '5px solid ' + item.color;
+    panel.innerHTML =
+      '<div class="fade-key"><div class="eyebrow" style="margin-bottom:10px;color:' + item.color + ';">' + item.tag + '</div>' +
+      '<h3 style="font-size:24px;font-weight:600;margin-bottom:16px;color:var(--brand-yellow-ink);">' + item.title + '</h3>' +
+      '<p style="color:#4A3A1E;font-size:16px;margin-bottom:22px;">' + item.description + '</p>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:8px;">' +
+      item.tools.map(function(t){ return '<span style="cursor:default;display:inline-flex;align-items:center;padding:9px 16px;border-radius:0;background:rgba(46,33,22,0.1);border:1px solid rgba(46,33,22,0.22);font-size:14px;font-weight:600;color:var(--brand-yellow-ink);">' + t + '</span>'; }).join('') +
+      '</div></div>';
+  }
+  renderTabs();
+  renderPanel();
+
+  // ---- Publications accordion ----
+  var pubs = [
+    { id: 'p1', title: 'Hydrogen Production with Seawater-Resilient Bipolar Membrane Electrolyzers',
+      authors: 'Marin, D. H.; Perryman, J. T.; Hubert, M. A.; et al.', venue: 'Joule', year: '2023',
+      summary: 'First-author paper demonstrating bipolar membrane electrolyzers that produce hydrogen directly from seawater and other impure water feedstocks, achieving an 8x reduction in chlorine oxidation and a 140x improvement in device lifetime versus a PEM baseline.' },
+    { id: 'p2', title: 'Controlling Chloride Crossover in Bipolar Membrane Water Electrolysis',
+      authors: 'Rochow, M. F.; Marin, D. H.; Cassady, H. J.; et al.', venue: 'ACS Electrochemistry', year: '2025',
+      summary: 'Investigates strategies to control chloride ion transport and crossover in bipolar membrane electrolyzers, a key durability challenge for hydrogen production from impure or saline water sources.' },
+    { id: 'p3', title: 'Multi-Scale Physics of Bipolar Membranes in Electrochemical Processes',
+      authors: 'Bui, J. C.; Lees, E. W.; Marin, D. H.; et al.', venue: 'Nature Chemical Engineering', year: '2024',
+      summary: 'A multi-scale look at the transport and reaction physics governing bipolar membrane behavior, connecting molecular-level phenomena to device-level electrochemical performance.' },
+    { id: 'p4', title: 'PolyID: Artificial Intelligence for Discovering Performance-Advantaged and Sustainable Polymers',
+      authors: 'Wilson, A. N.; St John, P. C.; Marin, D. H.; et al.', venue: 'Macromolecules', year: '2023',
+      summary: 'Co-authored work on PolyID, a machine-learning framework for discovering sustainable, performance-advantaged polymers, bridging materials science and computational design.' },
+    { id: 'p5', title: 'Impact of Environmental Conditions on Secondary Organic Aerosol Production from Photosensitized Humic Acid',
+      authors: 'Fankhauser, A. M.; Bourque, M.; Almazan, J.; et al.', venue: 'Environmental Science &amp; Technology', year: '2020',
+      summary: 'Undergraduate research examining how environmental conditions affect secondary organic aerosol formation, an early foothold in atmospheric and environmental science.' }
+  ];
+  var openPub = 'p1';
+  var pubList = document.getElementById('pub-list');
+  var pubColors = ['var(--clay-deep)', 'var(--sage-deep)', 'var(--rust-deep)', 'var(--green-deep)'];
+
+  var pubsFirstRender = true;
+  function renderPubs(){
+    pubList.innerHTML = '';
+    pubs.forEach(function(pub, idx){
+      var isOpen = pub.id === openPub;
+      var accent = pubColors[idx % pubColors.length];
+      var row = document.createElement('div');
+      row.className = 'pub-row' + (pubsFirstRender ? ' reveal' : '');
+      if (pubsFirstRender) row.style.transitionDelay = (idx * 0.08) + 's';
+      row.style.borderLeft = '3px solid ' + accent;
+      row.style.paddingLeft = '18px';
+      row.innerHTML =
+        '<button class="pub-toggle" aria-expanded="' + isOpen + '">' +
+          '<div><div style="font-size:17px;font-weight:600;color:var(--walnut-deep);margin-bottom:6px;">' + pub.title + (idx === 0 ? ' <span style="display:inline-block;vertical-align:middle;background:var(--rattan);color:var(--brand-ink);font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:3px 8px;border-radius:0;margin-left:6px;">Featured</span>' : '') + '</div>' +
+          '<div style="font-size:14px;color:var(--ink-soft);">' + pub.authors + ' &middot; <em>' + pub.venue + '</em>, ' + pub.year + '</div></div>' +
+          '<svg class="chev' + (isOpen ? ' open' : '') + '" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="' + accent + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>' +
+        '</button>' +
+        '<div class="pub-body' + (isOpen ? ' open' : '') + '"><p style="padding:0 4px 26px;color:var(--ink-soft);font-size:15px;max-width:700px;">' + pub.summary + '</p></div>';
+      row.querySelector('.pub-toggle').addEventListener('click', function(){
+        openPub = isOpen ? null : pub.id;
+        renderPubs();
+      });
+      pubList.appendChild(row);
+    });
+    if (pubsFirstRender) {
+      pubList.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
+      pubsFirstRender = false;
+    }
+  }
+  renderPubs();
+
+  // ---- Timeline ----
+  var timeline = [
+    { year: '09/2025-Present', title: 'Research Scientist and Consultant, Chemical Processes', org: 'Stealth Startup, Palo Alto, CA', description: 'Develops analytical protocols (NMR, UV-Vis, FTIR) for next-generation lithography materials and contributes to early-stage materials process R&amp;D in semiconductor technology.', color: 'var(--clay-deep)' },
+    { year: '2024-2025', title: 'Student President and NextGen Fellow', org: 'OpenMinds (Nonprofit)', description: 'Co-designed applicant rubrics for the inaugural NextGen Fellows cohort, and evaluated the technical and economic feasibility of decarbonization pathways across coal plant assets for a utilities company.', color: 'var(--green-deep)' },
+    { year: '06/2024-08/2024', title: 'Summer Market Entry Analysis Intern', org: 'Hydrasun, Hydrogen Division, Aberdeen, Scotland', description: 'Evaluated the technical and commercial feasibility of a U.S. market entry strategy, presenting economic forecasts and risk assessments to senior leadership.', color: 'var(--rust-deep)' },
+    { year: '03/2021-09/2025', title: 'Ph.D. Researcher, Impure Water Electrolysis R&amp;D', org: 'Stanford University, Dept. of Chemical Engineering', description: 'Designed and operated bipolar-membrane water electrolyzers for hydrogen production from seawater and tap water; wrote grant proposals supporting $600K+ in research funding and mentored 100+ researchers.', color: 'var(--clay-deep)' },
+    { year: '2021-2025', title: 'Ph.D., Chemical Engineering', org: 'Stanford University, School of Engineering', description: 'Stanford Hydrogen Club Co-President and Advisor. Coursework in the Hydrogen Economy, Electrochemical Energy Conversion and Storage, and Reaction Kinetics.', color: 'var(--green-deep)' },
+    { year: '08/2019-07/2020', title: 'Chemical Research Engineer Intern', org: 'NREL, National Bioenergy Center, Golden, CO', description: 'Synthesized and characterized composite thermosets from biomass waste, and developed non-toxic inorganic plasticizers to support commercialization.', color: 'var(--rust-deep)' },
+    { year: '2019-2021', title: 'M.S., Chemical Engineering', org: 'Stanford University, School of Engineering', description: 'Continued graduate study in chemical engineering ahead of doctoral research.', color: 'var(--clay-deep)' },
+    { year: '2018-2019', title: 'B.S., Chemical Engineering', org: 'Columbia University, The Fu Foundation School of Engineering', description: 'Hispanic Scholarship Fund Scholar; Dean&rsquo;s List, Fall 2018. Coursework in Photonics and Photovoltaic Systems Engineering, alongside undergraduate research on atmospheric aerosols.', color: 'var(--green-deep)' },
+    { year: '2014-2018', title: 'B.A., Physics', org: 'William Jewell College', description: 'Graduated Magna Cum Laude. Coursework in the Physics of Sustainability and Optics.', color: 'var(--rust-deep)' }
+  ];
+  var timelineList = document.getElementById('timeline-list');
+  timeline.forEach(function(step, i){
+    var accent = step.color;
+    var row = document.createElement('div');
+    row.className = 'reveal';
+    row.style.transitionDelay = (i * 0.1) + 's';
+    row.style.display = 'flex';
+    row.style.gap = '22px';
+    row.innerHTML =
+      '<div style="display:flex;flex-direction:column;align-items:center;">' +
+        '<div class="timeline-dot" style="background:' + accent + ';box-shadow:0 0 0 1.5px ' + accent + ';"></div>' +
+        (i < timeline.length - 1 ? '<div style="width:2px;flex:1;background:var(--line);"></div>' : '') +
+      '</div>' +
+      '<div style="padding-bottom:40px;">' +
+        '<div class="eyebrow" style="margin-bottom:6px;color:' + accent + ';">' + step.year + '</div>' +
+        '<h4 style="font-size:19px;font-weight:600;margin-bottom:4px;">' + step.title + '</h4>' +
+        '<div style="font-size:14.5px;color:' + accent + ';font-weight:600;margin-bottom:8px;">' + step.org + '</div>' +
+        '<p style="color:var(--ink-soft);font-size:15px;max-width:560px;">' + step.description + '</p>' +
+      '</div>';
+    timelineList.appendChild(row);
+    revealObserver.observe(row);
+  });
+
+  // ---- Skills ----
+  var skillGroups = [
+    { name: 'Electrochemistry & Characterization', color: 'var(--clay-deep)', tint: 'var(--clay-tint)', items: ['CV', 'CP', 'CA', 'EIS (dual-reference)', 'SEM', 'EDS', 'XPS', 'UV-Vis', 'TGA', 'DSC', 'NMR', 'FTIR', 'XAS'] },
+    { name: 'Experimental & Apparatus Design', color: 'var(--sage-deep)', tint: 'var(--sage-tint)', items: ['Electrochemical cell design', 'High-vacuum instrumentation', 'Optical / laser instrumentation', 'MATLAB', 'Python', 'Origin'] },
+    { name: 'Program, Funding & Leadership', color: 'var(--rust-deep)', tint: 'var(--rust-tint)', items: ['Grant writing', 'Proposal review', 'Techno-economic analysis', 'Budget-linked project mgmt', 'Cross-sector collaboration', 'EHS / lab safety', 'Mentoring & training'] }
+  ];
+  var skillsList = document.getElementById('skills-list');
+  skillGroups.forEach(function(group, gi){
+    var col = document.createElement('div');
+    col.className = 'reveal';
+    col.style.transitionDelay = (gi * 0.12) + 's';
+    col.innerHTML =
+      '<h4 style="font-size:16px;font-weight:600;margin-bottom:16px;color:' + group.color + ';">' + group.name + '</h4>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:8px;">' +
+      group.items.map(function(s){ return '<span class="chip">' + s + '</span>'; }).join('') +
+      '</div>';
+    skillsList.appendChild(col);
+    revealObserver.observe(col);
+  });
+
+  // ---- Theme toggle (per-viewer only) ----
+  var root = document.documentElement;
+  var themeToggle = document.getElementById('theme-toggle');
+  var saved = null;
+  try { saved = localStorage.getItem('portfolio-theme'); } catch(e) {}
+  // Default to light regardless of the visitor's system/browser preference.
+  // Only switch to dark if they've explicitly chosen it before (saved) or click the toggle now.
+  root.setAttribute('data-theme', (saved === 'dark') ? 'dark' : 'light');
+  themeToggle.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('portfolio-theme', next); } catch(e) {}
+  });
+})();
+</script>
+</body>
+</html>
