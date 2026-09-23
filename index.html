@@ -166,7 +166,17 @@
 <!-- NAV -->
 <div id="site-nav" style="position:sticky;top:0;z-index:40;background:linear-gradient(90deg, var(--brand-yellow-surface), var(--brand-yellow-surface-2));border-bottom:1px solid rgba(46,33,22,0.15); padding-top: env(safe-area-inset-top, 0px);">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:76px;">
-    <a href="#top" id="nav-logo" style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--brand-yellow-ink);letter-spacing:0.01em;cursor:pointer;white-space:nowrap;">Daniela</a>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a href="#top" id="nav-logo" style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--brand-yellow-ink);letter-spacing:0.01em;cursor:pointer;white-space:nowrap;">Daniela</a>
+      <div style="display:flex;align-items:center;gap:6px;" title="Scroll progress">
+        <svg width="34" height="18" viewBox="0 0 28 14" aria-hidden="true">
+          <rect x="0.75" y="0.75" width="24" height="12.5" rx="2.5" fill="rgba(255,253,249,0.75)" stroke="rgba(46,33,22,0.35)" stroke-width="1"/>
+          <rect x="25.5" y="4.5" width="2" height="5" rx="1" fill="rgba(46,33,22,0.35)"/>
+          <rect id="battery-fill-rect" x="2.25" y="2.25" width="0" height="9.5" fill="#e35444" style="transition:fill .3s ease;"/>
+        </svg>
+        <span id="battery-pct" style="font-size:13px;font-weight:600;color:var(--brand-yellow-ink);min-width:34px;font-variant-numeric:tabular-nums;">0%</span>
+      </div>
+    </div>
     <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -514,7 +524,7 @@
     var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     if (batteryFill) {
       batteryFill.setAttribute('width', (pct / 100 * 21).toFixed(1));
-      var fillColor = pct < 20 ? 'var(--rust)' : (pct < 90 ? 'var(--yellow)' : 'var(--green)');
+      var fillColor = pct < 25 ? '#e35444' : (pct <= 75 ? '#f6bb15' : '#508630');
       batteryFill.style.fill = fillColor;
     }
     if (batteryPct) { batteryPct.textContent = Math.round(pct) + '%'; }
