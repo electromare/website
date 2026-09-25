@@ -159,6 +159,16 @@
     .research-grid{grid-template-columns:1fr !important;}
     .skills-grid{grid-template-columns:1fr !important;}
   }
+    .hero{position:relative;overflow:hidden;padding:120px 0 116px;background:var(--ivory);}
+  .hero-bg{position:absolute;top:50%;right:0;transform:translateY(-50%);width:min(72%,1100px);height:auto;opacity:.6;pointer-events:none;user-select:none;}
+  .hero-fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--ivory) 0%,var(--ivory) 34%,color-mix(in srgb,var(--ivory) 72%,transparent) 56%,color-mix(in srgb,var(--ivory) 15%,transparent) 100%);}
+  .hero-copy{position:relative;z-index:1;max-width:620px;}
+  :root[data-theme="dark"] .hero-bg{filter:invert(1) hue-rotate(180deg);opacity:.45;}
+  @media (max-width: 860px){
+    .hero{padding:88px 0 calc(68vw + 48px);}
+    .hero-bg{top:auto;bottom:16px;right:50%;transform:translateX(50%);width:122%;opacity:.5;}
+    .hero-fade{background:linear-gradient(180deg,var(--ivory) 0%,var(--ivory) 55%,color-mix(in srgb,var(--ivory) 45%,transparent) 78%,transparent 100%);}
+  }
 </style>
 </head>
 <body>
@@ -218,18 +228,18 @@
 </div>
 
 <!-- HERO -->
-<div id="top" style="position:relative;overflow:hidden;padding-top:96px;padding-bottom:88px;background:linear-gradient(180deg,var(--ivory) 0%, var(--ivory) 70%, var(--clay-tint) 200%);">
-  <div aria-hidden="true" style="position:absolute;top:-120px;right:-90px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 35% 35%, var(--clay-tint), transparent 70%);filter:blur(6px);opacity:.9;"></div>
-  <div aria-hidden="true" style="position:absolute;bottom:-140px;left:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle at 60% 40%, var(--sage-tint), transparent 70%);filter:blur(6px);opacity:.85;"></div>
-  <div class="container hero-grid" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;position:relative;z-index:1;">
-    <div>
+<div id="top" class="hero">
+  <img class="hero-bg" src="photos/HERfigv4.png" alt="" aria-hidden="true">
+  <div class="hero-fade" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-copy">
       <div class="eyebrow" style="margin-bottom:18px;color:var(--green-deep);">Electrochemist &amp; Materials Scientist</div>
       <h1 style="font-size:clamp(38px,5vw,60px);font-weight:600;line-height:1.06;letter-spacing:-0.01em;">
         Hi, I&rsquo;m Dani,<br>an electrochemist <br>working at the intersection of <span style="color:var(--green);">materials, energy, and innovation</span>.
       </h1>
       <div style="margin-top:26px;display:flex;align-items:baseline;gap:10px;font-size:19px;color:var(--ink-soft);flex-wrap:wrap;">
         <span>Ph.D., Chemical Engineering, Stanford University, 10+ years in research spanning</span>
-        <span id="word" class="fade-key" style="background:var(--yellow);color:var(--brand-yellow-ink);padding:5px 14px 6px;border-radius:0;font-size:16px;font-weight:700;">battery materials</span>
+        <span id="word" class="fade-key" style="background:var(--yellow);color:var(--brand-yellow-ink);padding:5px 14px 6px;border-radius:0;font-size:16px;font-weight:700;">electrochemical energy</span>
       </div>
       <p style="margin-top:24px;max-width:520px;color:var(--ink-soft);font-size:16.5px;">
         Ph.D. chemical engineer with over a decade of research experience across materials science and energy efficiency, including semiconductor lithography materials, electrochemical energy conversion, biomass-derived materials, atmospheric research, and clean-tech market strategy. Drawn to problems where better materials mean better performance, wherever that shows up.
@@ -238,34 +248,6 @@
         <a href="#research" class="pill-btn pill-btn-primary">View my research</a>
         <a href="#contact" class="pill-btn pill-btn-outline">Say hello</a>
       </div>
-    </div>
-
-    <div style="position:relative;aspect-ratio:420/380;max-height:380px;">
-      <svg viewBox="0 0 420 380" style="width:100%;height:100%;display:block;" aria-hidden="true">
-        <defs>
-          <linearGradient id="cellGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#F1DECB"/>
-            <stop offset="100%" stop-color="#E4E8D6"/>
-          </linearGradient>
-        </defs>
-        <rect x="40" y="60" width="340" height="260" rx="0" fill="url(#cellGrad)" opacity="0.55"/>
-        <rect x="120" y="90" width="26" height="200" rx="0" fill="var(--clay-deep)"/>
-        <rect x="270" y="90" width="26" height="200" rx="0" fill="var(--rust)"/>
-        <line x1="133" y1="90" x2="133" y2="40" stroke="var(--ink)" stroke-width="3"/>
-        <line x1="283" y1="90" x2="283" y2="40" stroke="var(--ink)" stroke-width="3"/>
-        <line x1="133" y1="40" x2="283" y2="40" stroke="var(--ink)" stroke-width="3"/>
-        <circle cx="208" cy="40" r="16" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
-        <text x="208" y="45" text-anchor="middle" font-family="Jost" font-size="14" font-weight="600" fill="var(--ink)">e&minus;</text>
-        <circle class="pulse-dot" cx="160" cy="40" r="4.5" fill="var(--yellow)" stroke="var(--brand-yellow-ink)" stroke-width="0.5"/>
-        <circle class="pulse-dot" cx="256" cy="40" r="4.5" fill="var(--yellow)" stroke="var(--brand-yellow-ink)" stroke-width="0.5" style="animation-delay:1.2s;"/>
-        <circle class="float-slow" cx="150" cy="160" r="6" fill="var(--clay)" opacity="0.85"/>
-        <circle class="float-slower" cx="168" cy="220" r="5" fill="var(--clay)" opacity="0.7"/>
-        <circle class="float-slow" cx="140" cy="260" r="4.5" fill="var(--green)" opacity="0.7"/>
-        <circle class="float-slower" cx="260" cy="180" r="5" fill="var(--rust)" opacity="0.8"/>
-        <circle class="float-slow" cx="245" cy="240" r="4" fill="var(--rust)" opacity="0.65"/>
-        <text x="133" y="315" text-anchor="middle" font-family="Jost" font-size="13" font-weight="500" fill="var(--ink-soft)">anode</text>
-        <text x="283" y="315" text-anchor="middle" font-family="Jost" font-size="13" font-weight="500" fill="var(--ink-soft)">cathode</text>
-      </svg>
     </div>
   </div>
 </div>
@@ -457,8 +439,9 @@
 <!-- FOOTER -->
 <div style="padding:26px 0;background:var(--brand-rust-surface-2);border-top:1px solid rgba(255,255,255,0.1); padding-bottom: calc(26px + env(safe-area-inset-bottom, 0px));">
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-    <div style="font-size:13px;color:rgba(251,244,234,0.78);">&copy; 2026 Daniela Marin. Built with electrons.</div>
+    <div style="font-size:13px;color:rgba(251,244,234,0.78);">&copy; 2026 Daniela Marin. Built with e<sup>&minus;</sup>.</div>
     <div style="font-size:13px;color:rgba(251,244,234,0.78);">Materials, energy, and everything in between.</div>
+    <div style="font-size:13px;color:rgba(251,244,234,0.78);">Hero illustration designed by Scivetica. Thank you!</div>
   </div>
 </div>
 
