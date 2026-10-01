@@ -9,41 +9,41 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap">
 <style>
   :root{
-    --ivory:#FBF4EA;
-    --paper:#FFFDF9;
+    --ivory:#FFF6E3;
+    --paper:#FFFCF2;
     --ink:#2A2019;
     --ink-soft:#5B4C40;
     --walnut:#3C2A1E;
     --walnut-deep:#241811;
-    --clay:#F2810B;
-    --clay-deep:#C2650A;
-    --clay-tint:#FCE2C6;
+    --clay:#EDA45A;
+    --clay-deep:#A8641E;
+    --clay-tint:#FBE3BC;
     --yellow:#F8E083;
-    --sage:#9C7400;
-    --sage-deep:#7A5A00;
-    --sage-tint:#FDF0C7;
-    --rust:#E35444;
-    --rust-deep:#B53A2D;
-    --rust-tint:#F9DAD4;
-    --green:#508630;
-    --green-deep:#3A6423;
-    --green-tint:#E1EEDA;
-    --gold:#DB9A19;
-    --gold-tint:#F7E4B4;
-    --rattan:#1E1A16;
-    --line:#E6D8C6;
+    --sage:#9A7A1C;
+    --sage-deep:#7A5C0C;
+    --sage-tint:#FFF0B8;
+    --rust:#C0634A;
+    --rust-deep:#9A4631;
+    --rust-tint:#F9DACB;
+    --green:#648343;
+    --green-deep:#47602C;
+    --green-tint:#E4EDCB;
+    --gold:#D9AA3C;
+    --gold-tint:#FBEBA8;
+    --rattan:#4A3A26;
+    --line:#EBDDB5;
     --shadow: 0 18px 40px -22px rgba(36,24,17,0.45);
-    --brand-clay:#F2810B;
-    --brand-clay-deep:#C2650A;
+    --brand-clay:#EDA45A;
+    --brand-clay-deep:#A8641E;
     --brand-walnut:#3C2A1E;
-    --brand-ink:#FBF4EA;
-    --brand-surface:#F2810B;
-    --brand-surface-2:#C2650A;
+    --brand-ink:#FFF8E6;
+    --brand-surface:#EDA45A;
+    --brand-surface-2:#A8641E;
     --brand-yellow-surface:#FBE88F;
     --brand-yellow-surface-2:#F6DB6B;
     --brand-yellow-ink:#2E2116;
-    --brand-rust-surface:#E35444;
-    --brand-rust-surface-2:#B53A2D;
+    --brand-rust-surface:#A85F43;
+    --brand-rust-surface-2:#8A4A33;
     --radius:10px;
     color-scheme: light;
     box-sizing:border-box;
@@ -183,7 +183,7 @@
         <svg width="34" height="18" viewBox="0 0 28 14" aria-hidden="true">
           <rect x="0.75" y="0.75" width="24" height="12.5" rx="2.5" fill="rgba(255,253,249,0.75)" stroke="rgba(46,33,22,0.35)" stroke-width="1"/>
           <rect x="25.5" y="4.5" width="2" height="5" rx="1" fill="rgba(46,33,22,0.35)"/>
-          <rect id="battery-fill-rect" x="2.25" y="2.25" width="0" height="9.5" fill="#e35444" style="transition:fill .3s ease;"/>
+          <rect id="battery-fill-rect" x="2.25" y="2.25" width="0" height="9.5" fill="#E9A06A" style="transition:fill .3s ease;"/>
         </svg>
         <span id="battery-pct" style="font-size:13px;font-weight:600;color:var(--brand-yellow-ink);min-width:34px;font-variant-numeric:tabular-nums;">0%</span>
       </div>
@@ -199,7 +199,7 @@
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#media" class="nav-link">Media</a>
       <a href="#consulting" class="nav-link">Consulting</a>
-      <a href="#contact" class="pill-btn" style="background:var(--clay);color:var(--brand-ink);padding:11px 22px;font-size:14px;border-radius:0;white-space:nowrap;flex-shrink:0;">
+      <a href="#contact" class="pill-btn" style="background:var(--clay);color:var(--brand-yellow-ink);padding:11px 22px;font-size:14px;border-radius:0;white-space:nowrap;flex-shrink:0;">
         <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px rgba(80,134,48,0.25);"></span>
         Get in touch
       </a>
@@ -508,7 +508,7 @@
     var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     if (batteryFill) {
       batteryFill.setAttribute('width', (pct / 100 * 21).toFixed(1));
-      var fillColor = pct < 25 ? '#e35444' : (pct <= 75 ? '#f6bb15' : '#508630');
+      var fillColor = pct < 25 ? '#E9A06A' : (pct <= 75 ? '#F8E083' : '#8FB06A');
       batteryFill.style.fill = fillColor;
     }
     if (batteryPct) { batteryPct.textContent = Math.round(pct) + '%'; }
@@ -571,7 +571,7 @@
 
   // ---- Confetti easter egg (click the logo 5 times) ----
   var logo = document.getElementById('nav-logo');
-  var confettiColors = ['#F2810B', '#F8E083', '#E35444', '#508630'];
+  var confettiColors = ['#EDA45A', '#F8E083', '#E9A08C', '#A9C48A'];
   var clickCount = 0;
   var clickTimer = null;
   if (logo) {
