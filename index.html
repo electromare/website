@@ -165,9 +165,10 @@
   .hero-copy{position:relative;z-index:1;max-width:620px;}
   :root[data-theme="dark"] .hero-bg{filter:invert(1) hue-rotate(180deg);opacity:.45;}
   @media (max-width: 860px){
-    .hero{padding:88px 0 calc(68vw + 48px);}
-    .hero-bg{top:auto;bottom:16px;right:50%;transform:translateX(50%);width:122%;opacity:.5;}
-    .hero-fade{background:linear-gradient(180deg,var(--ivory) 0%,var(--ivory) 55%,color-mix(in srgb,var(--ivory) 45%,transparent) 78%,transparent 100%);}
+    .hero{padding:88px 0 80px;}
+    .hero-bg{top:50%;left:50%;right:auto;bottom:auto;transform:translate(-50%,-50%);width:auto;height:100%;max-width:none;opacity:.22;}
+    :root[data-theme="dark"] .hero-bg{opacity:.22;}
+    .hero-fade{background:linear-gradient(180deg,color-mix(in srgb,var(--ivory) 80%,transparent) 0%,color-mix(in srgb,var(--ivory) 55%,transparent) 50%,color-mix(in srgb,var(--ivory) 70%,transparent) 100%);}
   }
 </style>
 </head>
