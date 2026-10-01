@@ -22,9 +22,9 @@
     --sage:#9A7A1C;
     --sage-deep:#7A5C0C;
     --sage-tint:#FFF0B8;
-    --rust:#C0634A;
-    --rust-deep:#9A4631;
-    --rust-tint:#F9DACB;
+    --rust:#D2553A;
+    --rust-deep:#B3402A;
+    --rust-tint:#FBD9C8;
     --green:#648343;
     --green-deep:#47602C;
     --green-tint:#E4EDCB;
@@ -42,8 +42,8 @@
     --brand-yellow-surface:#FBE88F;
     --brand-yellow-surface-2:#F6DB6B;
     --brand-yellow-ink:#2E2116;
-    --brand-rust-surface:#A85F43;
-    --brand-rust-surface-2:#8A4A33;
+    --brand-rust-surface:#C24A32;
+    --brand-rust-surface-2:#A93B27;
     --radius:10px;
     color-scheme: light;
     box-sizing:border-box;
@@ -142,14 +142,6 @@
   }
   .confetti-piece{position:fixed;width:8px;height:8px;pointer-events:none;z-index:999;border-radius:0;}
   @keyframes confettiFall{0%{transform:translate(0,0) rotate(0deg);opacity:1;}100%{transform:translate(var(--dx),var(--dy)) rotate(var(--rot));opacity:0;}}
-  .weave-divider{
-    height:16px;
-    background-color:var(--clay-tint);
-    background-image:
-      repeating-linear-gradient(45deg, var(--rattan) 0px, var(--rattan) 2.5px, transparent 2.5px, transparent 9px),
-      repeating-linear-gradient(-45deg, var(--walnut) 0px, var(--walnut) 2.5px, transparent 2.5px, transparent 9px);
-    opacity:0.85;
-  }
   .hide-scrollbar-x{overflow-x:auto;}
   @media (max-width: 860px){
     .container{padding-inline:24px;}
@@ -411,12 +403,9 @@
   </div>
 </div>
 
-<div class="weave-divider" aria-hidden="true"></div>
 
 <!-- CONTACT -->
-<div id="contact" style="padding:110px 0 100px;background:linear-gradient(135deg, var(--brand-rust-surface) 0%, var(--brand-rust-surface-2) 100%);position:relative;overflow:hidden;">
-  <div aria-hidden="true" style="position:absolute;top:-160px;right:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%);"></div>
-  <div aria-hidden="true" style="position:absolute;bottom:-180px;left:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle, rgba(0,0,0,0.14), transparent 70%);"></div>
+<div id="contact" style="padding:110px 0 100px;background:var(--brand-rust-surface);position:relative;overflow:hidden;">
   <div class="container" style="position:relative;z-index:1;">
     <div style="max-width:600px;">
       <div class="eyebrow" style="color:var(--yellow);margin-bottom:14px;">Get in touch</div>
@@ -571,7 +560,7 @@
 
   // ---- Confetti easter egg (click the logo 5 times) ----
   var logo = document.getElementById('nav-logo');
-  var confettiColors = ['#EDA45A', '#F8E083', '#E9A08C', '#A9C48A'];
+  var confettiColors = ['#EDA45A', '#F8E083', '#E8806A', '#A9C48A'];
   var clickCount = 0;
   var clickTimer = null;
   if (logo) {
@@ -672,7 +661,7 @@
 
   function renderPanel(){
     var item = research.find(function(r){ return r.id === activeResearch; });
-    panel.style.background = 'linear-gradient(160deg, var(--brand-yellow-surface) 0%, var(--brand-yellow-surface-2) 100%)';
+    panel.style.background = 'var(--brand-yellow-surface)';
     panel.style.borderTop = '5px solid ' + item.color;
     panel.innerHTML =
       '<div class="fade-key"><div class="eyebrow" style="margin-bottom:10px;color:' + item.color + ';">' + item.tag + '</div>' +
