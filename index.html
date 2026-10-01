@@ -18,7 +18,7 @@
     --clay:#F2810B;
     --clay-deep:#C2650A;
     --clay-tint:#FCE2C6;
-    --yellow:#F6BB15;
+    --yellow:#F8E083;
     --sage:#9C7400;
     --sage-deep:#7A5A00;
     --sage-tint:#FDF0C7;
@@ -39,8 +39,8 @@
     --brand-ink:#FBF4EA;
     --brand-surface:#F2810B;
     --brand-surface-2:#C2650A;
-    --brand-yellow-surface:#F6BB15;
-    --brand-yellow-surface-2:#DFA400;
+    --brand-yellow-surface:#FBE88F;
+    --brand-yellow-surface-2:#F6DB6B;
     --brand-yellow-ink:#2E2116;
     --brand-rust-surface:#E35444;
     --brand-rust-surface-2:#B53A2D;
@@ -175,7 +175,7 @@
 <body>
 
 <!-- NAV -->
-<div id="site-nav" style="position:sticky;top:0;z-index:40;background:linear-gradient(90deg, var(--brand-yellow-surface), var(--brand-yellow-surface-2));border-bottom:1px solid rgba(46,33,22,0.15); padding-top: env(safe-area-inset-top, 0px);">
+<div id="site-nav" style="position:sticky;top:0;z-index:40;background:var(--brand-yellow-surface);border-bottom:1px solid rgba(46,33,22,0.15); padding-top: env(safe-area-inset-top, 0px);">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:76px;">
     <div style="display:flex;align-items:center;gap:14px;">
       <a href="#top" id="nav-logo" style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--brand-yellow-ink);letter-spacing:0.01em;cursor:pointer;white-space:nowrap;">Daniela Marin</a>
@@ -571,7 +571,7 @@
 
   // ---- Confetti easter egg (click the logo 5 times) ----
   var logo = document.getElementById('nav-logo');
-  var confettiColors = ['#F2810B', '#F6BB15', '#E35444', '#508630'];
+  var confettiColors = ['#F2810B', '#F8E083', '#E35444', '#508630'];
   var clickCount = 0;
   var clickTimer = null;
   if (logo) {
