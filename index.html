@@ -246,7 +246,7 @@
 </div>
 
 <!-- ABOUT -->
-<div id="about" style="padding:96px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+<div id="about" style="padding:96px 0;background:var(--paper);">
   <div class="container two-col" style="display:grid;grid-template-columns:0.7fr 1.3fr;gap:64px;">
     <div class="reveal">
       <div class="eyebrow" style="margin-bottom:14px;">About</div>
@@ -290,7 +290,7 @@
 </div>
 
 <!-- PUBLICATIONS -->
-<div id="publications" style="padding:96px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+<div id="publications" style="padding:96px 0;background:var(--paper);">
   <div class="container" style="max-width:880px;">
     <div class="eyebrow" style="margin-bottom:14px;">Selected Publications</div>
     <h2 style="font-size:34px;font-weight:600;margin-bottom:16px;color:var(--green);">A selection, spanning a few different fields.</h2>
@@ -309,7 +309,7 @@
 </div>
 
 <!-- SKILLS -->
-<div id="skills" style="padding:96px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+<div id="skills" style="padding:96px 0;background:var(--paper);">
   <div class="container">
     <div class="eyebrow" style="margin-bottom:14px;color:var(--green-deep);">Skills &amp; Techniques</div>
     <h2 style="font-size:34px;font-weight:600;margin-bottom:44px;color:var(--green);">The toolkit.</h2>
@@ -386,7 +386,7 @@
 </div>
 
 <!-- CONSULTING -->
-<div id="consulting" style="padding:96px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+<div id="consulting" style="padding:96px 0;background:var(--paper);">
   <div class="container two-col" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:64px;align-items:center;">
     <div class="reveal">
       <div class="eyebrow" style="margin-bottom:14px;">Consulting</div>
@@ -427,7 +427,7 @@
 </div>
 
 <!-- FOOTER -->
-<div style="padding:26px 0;background:var(--brand-rust-surface-2);border-top:1px solid rgba(255,255,255,0.1); padding-bottom: calc(26px + env(safe-area-inset-bottom, 0px));">
+<div style="padding:26px 0;background:var(--brand-rust-surface-2);padding-bottom: calc(26px + env(safe-area-inset-bottom, 0px));">
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
     <div style="font-size:13px;color:rgba(251,244,234,0.78);">&copy; 2026 Daniela Marin. Built with e<sup>&minus;</sup>.</div>
     <div style="font-size:13px;color:rgba(251,244,234,0.78);">Materials, energy, and everything in between.</div>
@@ -662,7 +662,6 @@
   function renderPanel(){
     var item = research.find(function(r){ return r.id === activeResearch; });
     panel.style.background = 'var(--brand-yellow-surface)';
-    panel.style.borderTop = '5px solid ' + item.color;
     panel.innerHTML =
       '<div class="fade-key"><div class="eyebrow" style="margin-bottom:10px;color:' + item.color + ';">' + item.tag + '</div>' +
       '<h3 style="font-size:24px;font-weight:600;margin-bottom:16px;color:var(--brand-yellow-ink);">' + item.title + '</h3>' +
@@ -702,8 +701,8 @@
       var row = document.createElement('div');
       row.className = 'pub-row' + (pubsFirstRender ? ' reveal' : '');
       if (pubsFirstRender) row.style.transitionDelay = (idx * 0.08) + 's';
-      row.style.borderLeft = '3px solid ' + accent;
       row.style.paddingLeft = '18px';
+      row.style.borderLeft = '3px solid ' + accent;
       row.innerHTML =
         '<button class="pub-toggle" aria-expanded="' + isOpen + '">' +
           '<div><div style="font-size:17px;font-weight:600;color:var(--walnut-deep);margin-bottom:6px;">' + pub.title + (idx === 0 ? ' <span style="display:inline-block;vertical-align:middle;background:var(--rattan);color:var(--brand-ink);font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:3px 8px;border-radius:0;margin-left:6px;">Featured</span>' : '') + '</div>' +
